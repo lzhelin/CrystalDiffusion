@@ -44,4 +44,9 @@ sampled_images = diffusion.sample(
 data = sampled_images.to('cpu').detach().numpy()
 process('./', sh, data, el)
 ```
+## Citation
 
+    @misc{denoising-diffusion-pytorch ,
+        author  = {lucidrains},
+        url     = {https://github.com/lucidrains/denoising-diffusion-pytorch}
+    }
