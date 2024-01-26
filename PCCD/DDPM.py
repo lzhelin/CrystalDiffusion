@@ -339,7 +339,7 @@ class GaussianDiffusion(nn.Module):
             raise ValueError(f'invalid loss type {self.loss_type}')
 
     def p_losses(self, x_start, t,  classes,e,iss, noise = None):
-        global lsls,le,li,lc,save
+
         b, c, h, w = x_start.shape
         noise = default(noise, lambda: torch.randn_like(x_start))
 
@@ -347,14 +347,7 @@ class GaussianDiffusion(nn.Module):
 
         x = self.q_sample(x_start = x_start, t = t, noise = noise)
 
-        if lsls<10:
-            save=[*save,*(self.q_sample(x_start = x_start, t = t*0+999, noise = noise).to('cpu').detach().numpy())]
 
-            le=[*le,*(e.to('cpu').detach().numpy())]
-            lc=[*lc,*(classes.to('cpu').detach().numpy())]
-            li=[*li,*(iss.to('cpu').detach().numpy())]
-            # print([classes,e,iss])
-            np.savez_compressed('inv.npz',x=save,e=le,classes=lc,iss=li)
 
 
         # predict and take gradient step
