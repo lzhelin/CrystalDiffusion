@@ -50,3 +50,20 @@ process('./', sh, data, el)
         author  = {lucidrains},
         url     = {https://github.com/lucidrains/denoising-diffusion-pytorch}
     }
+
+    @ARTICLE{2024arXiv240113192L,
+           author = {{Li}, Zhelin and {Mrad}, Rami and {Jiao}, Runxian and {Huang}, Guan and {Shan}, Jun and {Chu}, Shibing and {Chen}, Yuanping},
+            title = "{Generative Design of Crystal Structures by Point Cloud Representations and Diffusion Model}",
+          journal = {arXiv e-prints},
+         keywords = {Computer Science - Artificial Intelligence, Condensed Matter - Materials Science, Computer Science - Machine Learning, Physics - Computational Physics},
+             year = 2024,
+            month = jan,
+              eid = {arXiv:2401.13192},
+            pages = {arXiv:2401.13192},
+              doi = {10.48550/arXiv.2401.13192},
+    archivePrefix = {arXiv},
+           eprint = {2401.13192},
+     primaryClass = {cs.AI},
+           adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240113192L},
+          adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    }
