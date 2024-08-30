@@ -129,5 +129,5 @@ def process(path,sh,data,el):#path，数量，数据，元素
             st += '  {}  {}  {}\n'.format(str(round(i[0] * 100) / 100), str(round(i[1] * 100) / 100),
                                           str(round(i[2] * 100) / 100))
 
-        with open(r'{}_{}.vasp'.format(path,sh), 'w+') as f:
+        with open(r'{}_{}.vasp'.format(path,s), 'w+') as f:
             f.writelines(st)
