@@ -18,7 +18,7 @@ if __name__ == '__main__':
     diffusion = GaussianDiffusion(
         model,
         image_size=128,
-        timesteps=1000
+        timesteps=1
     ).cuda()
 
 
@@ -30,15 +30,17 @@ if __name__ == '__main__':
 
 
 
-    sh = 1
-    image_classes = torch.Tensor([5]).to(torch.long).cuda()
+    sh = 64
 
-    iss0 = torch.Tensor([1]).to(torch.long).cuda()
-    ee= torch.Tensor([[m['Ca'],m['Mg'],m['O']]]).to(torch.long).cuda()
-    el = [['Ca','Mg','O']]
+    image_classes = torch.Tensor([0]*sh).to(torch.long).cuda()
 
-
-
+    iss0 = torch.Tensor([1]*sh).to(torch.long).cuda()
+    s=[]
+    el=[]
+    for i in range(sh):
+        s.append([m['Mg'],m['Al'],m['Li']])
+        el.append(['Mg','Al','Li'])
+    ee= torch.Tensor(s).to(torch.long).cuda()
 
     sampled_images = diffusion.sample(
         classes=image_classes,
@@ -49,3 +51,5 @@ if __name__ == '__main__':
 
     data = sampled_images.to('cpu').detach().numpy()
     process('./', sh, data, el)
+
+
