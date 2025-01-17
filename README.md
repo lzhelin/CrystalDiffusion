@@ -1,5 +1,8 @@
 # CrystalDiffusion
 
+The maintenance of this project is handled within the following repository:
+https://github.com/PhysiLearn/CrystalDiffusion
+
 ## Environment
 
 You can run ```!pip install -r requirement.txt``` to install packages required.
